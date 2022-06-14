@@ -40,13 +40,30 @@ let questions = [
     },
     {
         type: "input",
-        message: "What is your GitHub user ID?",
-        name: "logo"
+        message: "Did you run any tests?",
+        name: "tests"
     },
     {
         type: "input",
         message: "What is your email address?",
         name: "email"
     },
+    {
+        type: "input",
+        message: "What is your GitHub user ID?",
+        name: "logo"
+    },
 ]
+
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, err => {
+        if (err) {
+          return console.log(errors);
+        } else {
+            console.log("Your Readme is Alive!")
+        });
+
+}
+
+const writeFileAsync = util.promisify(writeInFile);
 
