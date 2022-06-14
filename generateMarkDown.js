@@ -1,4 +1,4 @@
-function generateMarkdown(title, description, install, use, license, credits, tests, github, email, license) {
+function generateMarkdown(title, description, install, use, license, contribute, tests, github, email, license) {
 
     return `
     
@@ -10,7 +10,7 @@ function generateMarkdown(title, description, install, use, license, credits, te
     2. [Install](#install)
     3. [Use](#use)
     4. [License](#license)
-    5. [Credits](#credits)
+    5. [Contribute](#contribute)
     6. [Tests](#tests)
     7. [Questions](#questions)
     

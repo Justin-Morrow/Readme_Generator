@@ -15,12 +15,12 @@ let questions = [
     {
         type: "input",
         message: "Tell about your application.",
-        name: "logo"
+        name: "description"
     },
     {
         type: "input",
         message: "Give the steps to install the application.",
-        name: "installation"
+        name: "install"
     },
     {
         type: "input",
@@ -51,19 +51,24 @@ let questions = [
     {
         type: "input",
         message: "What is your GitHub user ID?",
-        name: "logo"
+        name: "github"
     },
 ]
 
-function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data, err => {
-        if (err) {
-          return console.log(errors);
-        } else {
-            console.log("Your Readme is Alive!")
-        });
 
+function runQuery() {
+    return inquirer.prompt(questions)
+        .then((answers) => {
+            const mark = generateMarkDown.generateReadme(answers)
+            fs.writeFile('README.md', mark, function (error) {        
+            if (error) {
+                console.log('File not saved', error)
+            } else {
+                console.log('Success: README GENERATED')
+            }
+            })
+        })
+        .catch((error) => {
+            console.log(error)
+        })
 }
-
-const writeFileAsync = util.promisify(writeInFile);
-
