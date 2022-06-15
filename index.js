@@ -2,30 +2,30 @@
 
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generateMarkDown = require('./generateMarkDown');
+const generateMarkDown = require('./generateMarkDown')
 const util = require('util');
 const path = require('path');
 
 let questions = [
     {
-        type: "input",
+        type: 'input',
         message: "What is the title of your repository?",
-        name: "title"
+        name: 'title'
     },
     {
-        type: "input",
+        type: 'input',
         message: "Tell about your application.",
-        name: "description"
+        name: 'description'
     },
     {
-        type: "input",
+        type: 'input',
         message: "Give the steps to install the application.",
-        name: "install"
+        name: 'install'
     },
     {
-        type: "input",
+        type: 'input',
         message: "Write the instructions on how to use the application.",
-        name: "Use"
+        name: 'usage'
     },
     {
         type: 'list',
@@ -39,27 +39,26 @@ let questions = [
         name: 'contribute'
     },
     {
-        type: "input",
+        type: 'input',
         message: "Did you run any tests?",
-        name: "tests"
+        name: 'tests'
     },
     {
-        type: "input",
+        type: 'input',
         message: "What is your email address?",
-        name: "email"
+        name: 'email'
     },
     {
-        type: "input",
+        type: 'input',
         message: "What is your GitHub user ID?",
-        name: "github"
+        name: 'github'
     },
 ]
-
 
 function runQuery() {
     return inquirer.prompt(questions)
         .then((answers) => {
-            const mark = generateMarkDown.generateReadme(answers)
+            const mark = generateMarkDown(answers)
             fs.writeFile('README.md', mark, function (error) {        
             if (error) {
                 console.log('File not saved', error)
@@ -72,3 +71,4 @@ function runQuery() {
             console.log(error)
         })
 }
+runQuery();

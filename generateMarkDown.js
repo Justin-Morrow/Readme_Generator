@@ -1,42 +1,40 @@
-function generateMarkdown(title, description, install, use, license, contribute, tests, github, email, license) {
+// function generateMarkdown(title, description, install, use, license, contribute, tests, github, email, license) {
 
-    return `
+    function generateMarkDown(answers) {
+        return `
+    # ${answers.title}
     
-    ${license}
-    # Project Name: ${title}
-    
-    ## Table of contents
-    1. [Description](#description)
-    2. [Install](#install)
-    3. [Use](#use)
-    4. [License](#license)
-    5. [Contribute](#contribute)
-    6. [Tests](#tests)
-    7. [Questions](#questions)
-    
-    <h2 id="description"> Project Description </h2>
-    ${description}
-    
+    ## Table of Contents
+        1. [Description](#description)
+        2. [Install](#install)
+        3. [Usage](#usage)
+        4. [License](#license)
+        5. [Contribute](#contribute)
+        6. [Tests](#tests)
+        7. [Questions](#questions)
+        
+    ## Project Description
+        ${answers.description}
+        
     ## Installation 
-    ${installation}
-    
-    ## Use
-    ${use}
-    
+        ${answers.install}
+        
+    ## Usage
+        ${answers.usage}
+        
     ## License 
-    This application is covered under the ${license}.
-    ## Credits 
-    ${credits}
-    
-    ## Tests 
-    ${tests}
-    
-    ## Questions 
-    If you have any questions, please contact me to the information listed below.
-    
-    * Email: ${email}
-    * GitHub: [${github}](https://github.com/${github})
-    
-    `};
+        This application is covered under the ${answers.license}
 
-    module.exports = generateMarkdown;
+    ## Credits 
+        ${answers.contribute}
+        
+    ## Tests 
+        ${answers.tests}
+        
+    ## Questions 
+    ${answers.email}
+    ${answers.github}
+        `
+}
+    
+    module.exports = generateMarkDown
