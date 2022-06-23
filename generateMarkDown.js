@@ -31,7 +31,7 @@ ${answers.tests}
         
 ## Questions 
 ${answers.email}
- ${answers.github}
+${answers.github}
     `
 }
     
