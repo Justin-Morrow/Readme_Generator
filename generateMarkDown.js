@@ -1,38 +1,38 @@
     function generateMarkDown(answers) {
         return `
-    # ${answers.title}
+# ${answers.title}
     
-    ## Table of Contents
-        *1. [Description](#description)
-        * [Install](#install)
-        3. [Usage](#usage)
-        4. [License](#license)
-        5. [Contribute](#contribute)
-        6. [Tests](#tests)
-        7. [Questions](#questions)
+## Table of Contents
+* [Description](#description)
+* [Install](#install)
+* [Usage](#usage)
+* [License](#license)
+* [Contribute](#contribute)
+* [Tests](#tests)
+* [Questions](#questions)
         
-    ## Description
-        ${answers.description}
+## Description
+${answers.description}
         
-    ## Install
-        ${answers.install}
+## Install
+${answers.install}
         
-    ## Usage
-        ${answers.usage}
+## Usage
+${answers.usage}
         
-    ## License 
-        This application is covered under the ${answers.license}
+## License 
+This application is covered under the ${answers.license}
 
-    ## Contribute
-        ${answers.contribute}
+## Contribute
+${answers.contribute}
         
-    ## Tests 
-        ${answers.tests}
+## Tests 
+${answers.tests}
         
-    ## Questions 
-    ${answers.email}
-    ${answers.github}
-        `
+## Questions 
+${answers.email}
+ ${answers.github}
+    `
 }
     
     module.exports = generateMarkDown
