@@ -1,7 +1,7 @@
 {
   "name": "readme_generator",
   "version": "1.0.0",
-  "description": "",
+  "description": "1. [Description](#description)         2. [Install](#install)         3. [Usage](#usage)         4. [License](#license)         5. [Contribute](#contribute)         6. [Tests](#tests)         7. [Questions](#questions)",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,5 +19,6 @@
   "homepage": "https://github.com/Justin-Morrow/Readme_Generator#readme",
   "dependencies": {
     "inquirer": "^8.2.4"
-  }
+  },
+  "devDependencies": {}
 }

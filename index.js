@@ -59,9 +59,9 @@ function runQuery() {
     return inquirer.prompt(questions)
         .then((answers) => {
             const mark = generateMarkDown(answers)
-            fs.writeFile('README.md', mark, function (error) {        
-            if (error) {
-                console.log('File not saved', error)
+            fs.writeFile('README.md', mark, function (err) {        
+            if (err) {
+                console.log('File not saved', err)
             } else {
                 console.log('Success: README GENERATED')
             }
