@@ -1,7 +1,15 @@
-    function generateMarkDown(answers) {
+function renderLicenseBadge(license) {
+    if (license !== 'None') {
+      return `![GitHub license](https://img.shields.io/badge/license-${license}-green.svg)`;
+    }
+    return '';
+  } 
+  
+  function generateMarkDown(answers) {
         return `
 # ${answers.title}
     
+${renderLicenseBadge(answers.license)}
 ## Table of Contents
 * [Description](#description)
 * [Install](#install)

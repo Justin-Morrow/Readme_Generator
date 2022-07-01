@@ -30,7 +30,7 @@ let questions = [
     {
         type: 'list',
         message: 'Select the license of your application.',
-        choices: ['GNU GPLv3.0 License', 'MIT License', 'Apache-2.0 License', 'None'],
+        choices: ['GPLv3.0', 'MIT', 'APACHE2.0', 'None'],
         name: 'license'
     },
     {
